@@ -3,13 +3,16 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const cors = require('cors');
 const budget = require("./data.json");
 app.use("/",express.static("public"));
+
+app.use( cors() );
 
 console.log(budget)
 
 app.get("/hello", (req,res) => {
-    res.send("Hello Varshitha Reddy Gangula");
+    res.send("Hell0 Varshitha Reddy");
 })
 
 app.get("/budget", (req,res) => {
